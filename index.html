@@ -3,17 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <title>タナバタ 〜 願いが振る街 〜</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <style type="text/css">
-    .container {margin:0px; width:100%; background-color: #ffffff;}
-    .tanzaku { position:absolute; transform: rotateY(15deg); width:100px; }
-  </style>
+    body {margin:0px;}
+    .container {margin:0px; padding:0px; width:100%; background-color: #000000;}
+    .tanzaku{
+      position:absolute;
+      -webkit-animation: vib 20s  ease-in;
+      -moz-animation: vib 20s ease-in;
+      -o-animation: vib 20s ease-in;
+      -ms-animation: vib 20s ease-in;
+      animation: vib 20s ease-in;
+    }
+
+    @-webkit-keyframes vib {
+      0% {width: 50px; -webkit-transform:scale(0.5);background-color: aqua;}
+      50% {width: 50px; -webkit-transform:scale(1); background-color: blue;}
+      100% {width: 50px; -webkit-transform:scale(1); background-color: blue;}
+    }
+
+    #result { color: #ffffff; }
   </style>
 </head>
 <body>
   <div id="container" class="container">
-    <div class="lat"></div>
-    <div class="lng"></div>
-    <img id="t1" class ="tanzaku" src="mirror.jpeg">
+    <div id="result">私の願い</div>
+    <input type="button" value="お願いする" onclick="connect_device()"/>
+    <img id="t1" class ="tanzaku" src="">
   </div>
   <div id="footer">
 <a xmlns:cc="http://creativecommons.org/ns#" href="http://aizu.io/" property="cc:attributionName" rel="cc:attributionURL">TOKUNO, Hirokazu</a> 作『<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">タナバタ 〜 願いが振る街 〜</span>』は<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際 ライセンス</a>で提供されています。
